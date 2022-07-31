@@ -1,7 +1,7 @@
-#!/usr/bin/python3
 from collections import deque
 
-filename = 'host_input'
+# read the string filename
+filename = input()
 output = deque()
 with open(filename) as fp:
     line = fp.readline()
@@ -17,10 +17,10 @@ with open(filename) as fp:
                     if gif_file not in output:
                         output.appendleft(gif_file)
         line = fp.readline()
-
-file = open("file.txt", "w")
+file = open(filename.replace('hosts', 'gifs_hosts'), 'w')
 
 for line in output:
     file.write(line + "\n")
     
 file.close()
+print(filename.replace('hosts', 'gifs_hosts'))
