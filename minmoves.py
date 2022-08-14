@@ -7,7 +7,6 @@ def getMinMoves(s):
 
     dp_good = [[inf for j in range(26)] for i in range(n)]
     dp_bad = [[inf for j in range(26)] for i in range(n)]
-
     for c in range(26):
         dp_bad[0][c] = abs(ord(s[0]) - ord("a") - c)
     for i in range(1, n):
